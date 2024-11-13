@@ -60,7 +60,7 @@ def generate_neurology_chat_response(model, img, user_query, model_prediction, c
 
     Now, based on the model's classification and the saliency map, answer the following user question:
 
-    "{user_query}"
+    '{user_query}'
     """
     response = model.generate_content([prompt, img])
     return response.text
