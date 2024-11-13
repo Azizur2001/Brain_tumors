@@ -167,10 +167,10 @@ def display_tab_content(tab_key):
         selected_model = st.radio("Select Model", ("Transfer Learning - Xception", "Custom CNN"), key=f"{tab_key}_model")
 
         if selected_model == "Transfer Learning - Xception":
-            model = load_xception_model('/content/xception_model.weights.h5')
+            model = load_xception_model('xception_model.weights.h5')
             img_size = (299, 299)
         else:
-            model = load_model('/content/cnn_model.h5')
+            model = load_model('cnn_model.h5')
             img_size = (224, 224)
 
         labels = ['Glioma', 'Meningioma', 'No tumor', 'Pituitary']
