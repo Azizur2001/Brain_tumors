@@ -126,11 +126,6 @@ def generate_saliency_map(model, img, img_array, class_index, img_size, uploaded
 
 
 def load_xception_model(model_path):
-    if not os.path.exists(model_path):
-        import urllib.request
-        url = 'https://storage.googleapis.com/tensorflow/keras-applications/xception/xception_weights_tf_dim_ordering_tf_kernels_notop.h5'
-        urllib.request.urlretrieve(url, model_path)
-
     img_shape=(299,299,3)
     base_model = tf.keras.applications.Xception(include_top=False, weights="imagenet",
                                                 input_shape=img_shape, pooling='max')
